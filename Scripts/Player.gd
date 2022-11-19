@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-onready var bullet = preload("res://Scenes/Bullet.tscn")
+onready var bullet = preload("res://Scenes/PlayerBullet.tscn")
 export (int) var SPEED = 300
 
 func _physics_process(delta):

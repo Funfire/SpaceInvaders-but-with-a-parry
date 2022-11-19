@@ -11,6 +11,10 @@ func _physics_process(delta):
 		vel.y -= 100
 	vel.y = speed*direction
 	vel = move_and_slide(vel, Vector2.UP)
-	if Input.is_action_just_pressed("parry"):
-		if Node.name == "EnemyBullet":
+	
+
+
+func _on_EnemyBulletHit_body_entered(body:Node):
+	if body.name == "ParryHitZone":
+		if Input.is_action_just_pressed("parry"):
 			direction = -1

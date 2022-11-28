@@ -7,7 +7,7 @@
 extents = Vector2( 33, 31 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 57, 10 )
+extents = Vector2( 46, 16 )
 
 [node name="Player" type="KinematicBody2D"]
 light_mask = 2
@@ -23,10 +23,8 @@ shape = SubResource( 1 )
 position = Vector2( 0, -32 )
 rotation = 1.5708
 
-[node name="ParryHitZone" type="KinematicBody2D" parent="."]
+[node name="ParryZone" type="Area2D" parent="."]
 
-[node name="Sprite" type="Sprite" parent="ParryHitZone"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ParryHitZone"]
-position = Vector2( 0, -41 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParryZone"]
+position = Vector2( 0, -48 )
 shape = SubResource( 2 )

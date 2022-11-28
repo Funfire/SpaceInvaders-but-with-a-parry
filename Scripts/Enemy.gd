@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 onready var bullet = preload("res://Scenes/EnemyBullet.tscn")
+onready var enemy = load("res://Scenes/Enemy.tscn")
 var canShoot = true
 
 func _physics_process(delta):
@@ -15,6 +16,11 @@ func enemyShoot():
 		$Timer.start()
 		canShoot = false
 
+func spawnEnemy():
+	var e = enemy.instance()
+	get_parent().add_child(e)
+	e.position = Vector2(rand_range(33, 565), 119)
+
 
 
 
@@ -24,5 +30,6 @@ func _on_Timer_timeout():
 
 
 func _on_Area2D_area_entered(area:Area2D):
-	if area.name == "PlayerBulletHit":
+	if area.name == "PlayerBulletHit" or area.name == "EnemyBulletHit":
 		queue_free()
+		spawnEnemy()

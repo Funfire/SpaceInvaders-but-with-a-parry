@@ -19,3 +19,10 @@ func shoot():
 		var b = bullet.instance()
 		get_parent().add_child(b)
 		b.global_position = $Position2D.global_position
+
+func die():
+	get_tree().change_scene("res://Scenes/TestLevel.tscn")
+
+func _on_PlayerHurtBox_area_entered(area:Area2D):
+	if area.name == "EnemyBulletHit":
+		die()

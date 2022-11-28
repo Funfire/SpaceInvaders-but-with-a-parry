@@ -19,7 +19,7 @@ func _on_EnemyBulletHit_area_entered(area:Area2D):
 			yield(get_tree(), "idle_frame")
 			if Input.is_action_just_pressed("parry"):
 				direction = -1
-				$EnemyBulletHit.set_name("PlayerBulletHit")
+				speed = 200
 		if area.name == "EnemyHurtbox":
 			queue_free()
 

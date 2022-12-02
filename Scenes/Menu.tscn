@@ -3,13 +3,13 @@
 [ext_resource path="res://Scripts/startButton.gd" type="Script" id=1]
 
 [node name="Menu" type="Node2D"]
-position = Vector2( 256, 204 )
+position = Vector2( 248, 180 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = -191.0
-margin_top = 160.0
-margin_right = 275.0
-margin_bottom = 226.0
+margin_left = -197.0
+margin_top = 289.0
+margin_right = 269.0
+margin_bottom = 355.0
 mouse_default_cursor_shape = 2
 text = "Start"
 script = ExtResource( 1 )
